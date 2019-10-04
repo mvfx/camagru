@@ -3,7 +3,10 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
+<<<<<<< HEAD
   <component name="ProjectPlainTextFileTypeManager">
     <file url="file://$PROJECT_DIR$/application/views/template_view.php" />
   </component>
+=======
+>>>>>>> 22d85ba3c049ddab46f3d4bd3a5f075726ce1f42
 </project>
