@@ -10,7 +10,8 @@
         <a href="#home">HOME</a>
     </div>
     <div class="login">
-        <a href="#login">LOGIN</a>
+        <a href="/user/join">JOIN</a>
+        <a href="/user/login">LOGIN</a>
     </div>
 </div>
 

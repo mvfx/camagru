@@ -5,11 +5,11 @@ body {
 }
 
 a {
-    display: block;
+    /*display: block;*/
     color: #dfe1ff;
     text-decoration: none;
     text-transform: uppercase;
-    padding: 15px;
+    margin: 10px;
 }
 
 a:hover {
@@ -48,10 +48,11 @@ a:visited {
     margin: 32px;
     padding: 10px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
-.label {
+.row {
     text-align: center;
 }
 
@@ -60,4 +61,8 @@ a:visited {
     display: inline;
     font-size: 10px;
 
+}
+
+.login {
+    margin: 15px 0px;
 }

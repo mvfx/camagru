@@ -16,9 +16,19 @@ class User_Controller extends Controller {
 
     function action_join()
     {
+        $data = $_POST;
 
-        $data = $this->model->get_data();
+        if ($_POST && isset($_POST['submit']) && $_POST['submit'] === "JOIN")
+        {
+            $errors = $this->model->validation($_POST);
 
-        $this->view->generate('user/join', 'main');
+        }
+
+
+        //$data = $this->model->get_data();
+
+        $data['errors'] = $errors;
+
+        $this->view->generate('user/join', 'main', $data);
     }
 }
