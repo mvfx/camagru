@@ -1,9 +1,5 @@
 body {
     margin: 0 auto;
-<<<<<<< HEAD
-    background-color: rgba(224, 224, 224, 0.34);
-}
-=======
     background-color: rgba(6, 0, 255, 0.09);
     font-family: 'Roboto', sans-serif;
 }
@@ -65,5 +61,3 @@ a:visited {
     font-size: 10px;
 
 }
-
->>>>>>> 22d85ba3c049ddab46f3d4bd3a5f075726ce1f42

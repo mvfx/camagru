@@ -36,4 +36,10 @@ class DB {
 			SET character_set_client=utf8;
 			SET character_set_results=utf8");
     }
+
+    public static function isDBExist($db_name) {
+        $stmt = self::$instance
+            ->query("SELECT COUNT(*) FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '{$db_name}'");
+        return (bool) $stmt->fetchColumn();
+    }
 }

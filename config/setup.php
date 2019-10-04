@@ -40,29 +40,53 @@ $_comment_table = "CREATE TABLE IF NOT EXISTS comments
 );";
 
 
-
+$message = '';
 
 try {
 
     $db_dsn = explode(';', $DB_DSN);
 
     $db = DB::getInstance($db_dsn[0], $DB_USER, $DB_PASSWORD);
-//    $db = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
     DB::setCharsetEncoding();
 
-    $db->query("CREATE DATABASE IF NOT EXISTS $DB_NAME;");
-    $db->query("use $DB_NAME;");
+    if (!DB::isDBExist($DB_NAME)) {
 
-    $db->query($_user_table);
-    $db->query($_photo_table);
-    $db->query($_likes_table);
-    $db->query($_comment_table);
+        $db->query("CREATE DATABASE IF NOT EXISTS $DB_NAME;");
+        $db->query("use $DB_NAME;");
+        $db->query($_user_table);
+        $db->query($_photo_table);
+        $db->query($_likes_table);
+        $db->query($_comment_table);
 
-    $db->query("INSERT INTO users VALUES (null, 'root', 'root', '123456', 1, 8)");
+        $data = [
+            'login' => 'admin',
+            'email' => 'admin',
+            'password' => '123456',
+            'status' => 1,
+            'role' => 8,
+        ];
+
+        $sql = "INSERT INTO users (login, email, password, status, role) VALUES (:login, :email, :password, :status, :role)";
+        $stmt = $db->prepare($sql);
+        $stmt->execute($data);
+        $message = "System successfully installed";
+
+    } else {
+        $message = "System already installed";
+    }
 
 
 
 } catch (Exception $e) {
     echo $e->getMessage();
-
 }
+
+?>
+
+
+<div>
+    <?=$message;?>
+</div>
+<div>
+    <a href="/">START TO USE</a>
+</div>

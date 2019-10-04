@@ -1,14 +1,24 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
     <title>CAMAGRU</title>
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
-
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+<div class="navigation">
+    <div class="logo">
+        <a href="#home">HOME</a>
+    </div>
+    <div class="login">
+        <a href="#login">LOGIN</a>
+    </div>
+</div>
+
+<div class="content">
 
 <?php include 'application/views/'.$view.'.php'; ?>
+
+</div>
 
 </body>
 </html>
